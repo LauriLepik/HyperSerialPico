@@ -44,7 +44,7 @@ jobs:
         path: |
           firmware/*.uf2
 
-    - name: Build packages for Adafruit Feather RP2040 Scorpio (release-only)
+    - name: Build packages for Adafruit Feather RP2040 Scorpio (commit)
       shell: bash
       run: |
         cd build
@@ -57,8 +57,7 @@ jobs:
         zip -j ../firmware/Adafruit_Feather_RP2040_Scorpio.zip ../firmware/*
 
     - uses: actions/upload-artifact@v4.4.3
-      name: Upload artifacts (release Adafruit_Feather)
-      if: startsWith(github.ref, 'refs/tags/')
+      name: Upload artifacts (commit Adafruit_Feather)
       with:
         name: firmware-release-adafruit-scorpio
         path: |
