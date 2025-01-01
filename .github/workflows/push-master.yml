@@ -45,7 +45,6 @@ jobs:
           firmware/*.uf2
 
     - name: Build packages for Adafruit Feather RP2040 Scorpio (release-only)
-      if: startsWith(github.ref, 'refs/tags/')
       shell: bash
       run: |
         cd build
